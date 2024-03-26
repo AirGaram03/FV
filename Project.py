@@ -84,12 +84,6 @@ while True:
         if match[matchedIndex]:
             # print("Known Face Detected")
             # print(stdID[matchedIndex])
-            # time.sleep(1)
-            # y1, x2, y2, x1 = faceLoc
-            # y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
-            # bbox = 55 + x1, 162 + y1, x2 - x1, y2 - y1
-            # imgBackground = cvz.cornerRect(imgBackground, bbox, rt=0)
-                        
             id = stdID[matchedIndex]
             # print(id)            
             if counter == 0:
@@ -122,20 +116,6 @@ while True:
             if 10<counter<20:
                 modeType = 2
                 imgBackground[305:305 + imgModeResized.shape[0], 539:539 + imgModeResized.shape[1]] = imgModeResized
-
-            
-            if counter <= 10:
-                        
-                cv.putText(imgBackground, str(stdInfo['total_attendance']), (861, 125),
-                            cv.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 1)
-                # (w, h), _ = cv.getTextSize(stdInfo['Nama'], cv.FONT_HERSHEY_COMPLEX, 1, 1)
-                # cv.putText(imgBackground, str(stdInfo['Nama']), (922, 445),
-                #             cv.FONT_HERSHEY_COMPLEX, 0.5, (50, 50, 50), 1)
-                # cv.putText(imgBackground, str(stdInfo['Jurusan']), (835, 550),
-                #             cv.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0), 1)# background, info, koordinat, font, ukuran, warna, tebal
-                # cv.putText(imgBackground, str(id), (950, 493),
-                #             cv.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0), 1)
-            
     counter+=1
     
     if counter > 20:
